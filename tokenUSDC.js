@@ -21,3 +21,20 @@ async function approve() {
 
 }
 
+
+
+//Gets the number of USDC tokens the player has
+async function USDC_balanceOf() {
+
+    var contract = new web3.eth.Contract(USDC_TOKEN_ABI, USDC_TOKEN_ADRRESS);
+    playerAddress = account;//The account must be logged in
+  
+    await contract.methods.balanceOf(playerAddress).call().then(function (info) {
+      console.log("balanceOf: ", info);
+      document.getElementById('balanceOfPlayer').innerHTML = info;
+    });
+  
+  
+  }
+  
+  
