@@ -49,6 +49,44 @@ function PachacuyToken() {
 }
 
 
+
+//Get the balance of USDC that has the SWAP
+async function CUYSWAP_balanceOfUSDC() {
+
+  var contract = new web3.eth.Contract(USDC_TOKEN_ABI, USDC_TOKEN_ADRRESS);
+  playerAddress = CUYSWAP_ADRRESS;//The account must be logged in
+
+  await contract.methods.balanceOf(playerAddress).call().then(function (info) {
+    console.log("balanceOf: ", info);
+    
+    //add here code for the front
+
+  });
+
+
+}
+
+
+
+//Gets the number of PCUY tokens the player has
+async function CUYSWAP_balanceOfPCUY() {
+
+  var contract = new web3.eth.Contract(PACHACUY_TOKEN_ABI, PACHACUY_TOKEN_ADRRESS);
+  playerAddress = CUYSWAP_ADRRESS;//The account must be logged in
+
+  await contract.methods.balanceOf(playerAddress).call().then(function (info) {
+    console.log("balanceOf: ", info);
+   
+ //add here code for the front
+    
+  });
+
+
+}
+
+
+
+
 //Call the method of exchanging Pachacuy Tokens to USDC
 async function swapPCUY_To_USDC() {
 
