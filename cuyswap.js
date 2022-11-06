@@ -37,6 +37,24 @@ function getAuthorizedPCUY() {
 }
 
 
+function CUYSWAP_USDC_to_Receive() {
+
+  var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
+  amount = $("#amountPCUy_TO_SWAP").val(); //field where the amount of PCUY to change is found
+
+  contract.methods.USDC_to_Receive(amount).call().then(function (info) {
+    console.log("amountUSDC_TO_Receive: ", info);
+    //add here code for the front
+
+
+  });
+
+
+}
+
+
+
+
 function PachacuyToken() {
 
   var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
