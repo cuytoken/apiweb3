@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>Web3 API Test</title>
+    <title>Web3 API Test:: USDC</title>
 
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="./node_modules/web3/dist/web3.min.js"></script>
     <script src="./abi.js"></script>
     <script src="./metamask.js"></script>
-    <script src="./pachacuyToken.js"></script>
+    <script src="./tokenUSDC.js"></script>
 
 
     <style>
@@ -35,7 +35,7 @@
 
 <body class="container">
 
-    <h1 class="page-header">Web3 API for Pachacuy Token ($PCUY) Smart Contracts </h1>
+    <h1 class="page-header">Web3 API for USDC Token Smart Contracts </h1>
 
 
     <div class="row">
@@ -52,16 +52,22 @@
 
     <div class="row">
         <div>
-            <h3 class="sub-header">authorizeOperator</h3>
+            <h3 class="sub-header">approve</h3>
             <form class="form-inline" role="form">
                 <div class="form-group">
                     <table>
-                        <tr>
-                            <td><label for="getAuthorizedPCUY">operatorAddress:</label> </td>
-                        </tr>
+                        
+
+                          <tr>
+                            <td><label for="approve">Amount (6 decimals):</label> </td>
+                            <td>
+                              <input class="form-control" id="amountApprove">
+                            </td>                          
+                          </tr>     
+
                     </table>
                 </div>
-                <a href="#" onclick="authorizeOperator()" class="btn btn-primary">Sign</a>
+                <a href="#" onclick="approve()" class="btn btn-primary">Sign</a>
             </form>
             <label id="operatorAddressInfo">
         </div>
