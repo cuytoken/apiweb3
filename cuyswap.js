@@ -24,10 +24,6 @@ async function setPCUYTokenAddress() {
 }
 
 
-getAuthorizedPCUY
-
-
-
 function getAuthorizedPCUY() {
  
   var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
