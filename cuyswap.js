@@ -70,3 +70,27 @@ async function swapPCUY_To_USDC() {
 
 
 }
+
+
+
+//SWAP  USDC token for the Pachacuy token
+async function swapUSDC_To_PCUY() {
+
+  try {
+
+    var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
+    amount = $("#USDC_AMOUNT").val();
+    await contract.methods.swapUSDC_To_PCUY(amount).send({ from: account }).then(function (tx) {
+      console.log("Transaction: ", tx);
+      //Modify here to add information to the user
+    });
+
+
+  } catch (error) {
+    // user rejected permission
+    console.log(error);
+
+  }
+
+
+}
