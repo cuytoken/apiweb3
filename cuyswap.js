@@ -7,7 +7,7 @@ async function setPCUYTokenAddress() {
   {
   
     var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
-    info = $("#newInfo").val();
+    info = $("#PCUYTokenAddress").val();
    await contract.methods.setPCUYTokenAddress(info).send({ from: account }).then(function (tx) {
       console.log("Transaction: ", tx);
       //Modify here to add information to the user
