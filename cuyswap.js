@@ -24,6 +24,24 @@ async function setPCUYTokenAddress() {
 }
 
 
+getAuthorizedPCUY
+
+
+
+function getAuthorizedPCUY() {
+ 
+  var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
+  playerAddress = $("#playerAddress").val();
+
+  contract.methods.getAuthorizedPCUY(playerAddress).call().then(function (info) {
+    console.log("playerAddress: ", info);
+    document.getElementById('playerAddressInfo').innerHTML = info;
+  });
+
+
+}
+
+
 function PachacuyToken() {
  
     var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
