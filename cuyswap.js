@@ -3,29 +3,28 @@
 
 async function setPCUYTokenAddress() {
 
-  try
-  {
-  
+  try {
+
     var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
     info = $("#PCUYTokenAddress").val();
-   await contract.methods.setPCUYTokenAddress(info).send({ from: account }).then(function (tx) {
+    await contract.methods.setPCUYTokenAddress(info).send({ from: account }).then(function (tx) {
       console.log("Transaction: ", tx);
       //Modify here to add information to the user
     });
-  
 
-} catch (error) {
-  // user rejected permission
-  console.log(error);
-  
-}
-  
+
+  } catch (error) {
+    // user rejected permission
+    console.log(error);
+
+  }
+
 
 }
 
 
 function getAuthorizedPCUY() {
- 
+
   var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
   playerAddress = $("#playerAddress").val();
 
@@ -39,12 +38,35 @@ function getAuthorizedPCUY() {
 
 
 function PachacuyToken() {
- 
+
+  var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
+  contract.methods._PachacuyToken().call().then(function (info) {
+    console.log("info: ", info);
+    document.getElementById('lastInfo').innerHTML = info;
+  });
+
+
+}
+
+
+//Call the method of exchanging Pachacuy Tokens to USDC
+async function swapPCUY_To_USDC() {
+
+  try {
+
     var contract = new web3.eth.Contract(CUYSWAP_ABI, CUYSWAP_ADRRESS);
-    contract.methods._PachacuyToken().call().then(function (info) {
-      console.log("info: ", info);
-      document.getElementById('lastInfo').innerHTML = info;
+    info = $("#PCUY_AMOUNT").val();
+    await contract.methods.swapPCUY_To_USDC(info).send({ from: account }).then(function (tx) {
+      console.log("Transaction: ", tx);
+      //Modify here to add information to the user
     });
-  
+
+
+  } catch (error) {
+    // user rejected permission
+    console.log(error);
+
+  }
+
 
 }

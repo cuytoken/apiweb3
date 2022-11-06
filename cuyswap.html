@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>CUY SWAP</title>
+  
+
+
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="./abi.js"></script>    
+    <script src="./metamask.js"></script>    
+    <script src="./cuyswap.js"></script>  
+
+
+
+<style>
+    hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: yellow;
+    background: black url(bgpachacuy.png) center center/contain no-repeat;
+}
+
+
+
+  </style>
+    
+   
+
+  </head>
+
+  <body class="container">
+
+    <h1 class="page-header">Web3 API Test for CUYSWAP Smart Contracts </h1>
+
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Connect to Metamask</h3>
+          <form class="form-inline" role="form">
+            <a href="#" onclick="connectMetamask()" class="btn btn-primary">Connect to Metamask</a>
+          </form>
+        </div>
+      </div>    
+
+      <hr/>
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">getAuthorizedPCUY</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="getAuthorizedPCUY">Info:</label> </td>
+                  <td>
+                    <input class="form-control" id="playerAddress">
+                  </td>                          
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="getAuthorizedPCUY()" class="btn btn-primary">Get</a>
+          </form>
+          <label id="playerAddressInfo">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">swapPCUY_To_USDC</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="swapPCUY_To_USDC">Info:</label> </td>
+                  <td>
+                    <input class="form-control" id="PCUY_AMOUNT">
+                  </td>                          
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="swapPCUY_To_USDC()" class="btn btn-primary">Get</a>
+          </form>
+          <label id="PCUY_AMOUNT_INFO">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">setPCUYTokenAddress</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="PCUYTokenAddress">Info:</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td>                          
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="setPCUYTokenAddress()" class="btn btn-primary">Sign</a>
+        </form>
+      </div>
+    </div>    
+
+    <hr/>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">PCUYTokenAddress</h3>
+        <form class="form-inline" role="form">
+          <a href="#" onclick="PachacuyToken()" class="btn btn-primary">Get</a>
+          <div class="form-group">
+            <table>
+              <tr>
+                <td>Info:</td>
+                <td>
+                  <label id="lastInfo">
+                </td>                          
+              </tr>
+            </table>
+          </div>                
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
