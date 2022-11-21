@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>CUY SWAP</title>
+  
+
+
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="./abi.js"></script>    
+    <script src="./metamask.js"></script>    
+    <script src="./orderbook.js"></script>  
+
+
+
+<style>
+    hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: yellow;
+    background: black url(bgpachacuy.png) center center/contain no-repeat;
+}
+
+
+
+  </style>
+    
+   
+
+  </head>
+
+  <body class="container">
+
+    <h1 class="page-header">Web3 API Test for ORDER BOOK Smart Contracts </h1>
+
+
+    <div class="row">
+        <div>
+          <h3 class="sub-header">Connect to Metamask</h3>
+          <form class="form-inline" role="form">
+            <a href="#" onclick="connectMetamask()" class="btn btn-primary">Connect to Metamask</a>
+          </form>
+        </div>
+      </div>    
+
+      <hr/>
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">Authorize USDC</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="getAuthorizedPCUY">Info:</label> </td>
+                  <td>
+                    <input class="form-control" id="amountApprove">
+                  </td>                          
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="OrderBook_ApproveUSDC()" class="btn btn-primary">Get</a>
+          </form>
+          <label id="playerAddressInfo">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">Authorize PACHACUY TOKEN</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="getAuthorizedPCUY">Info:</label> </td>                   
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="OrderBook_AuthorizeOperator()" class="btn btn-primary">Authorize Operator</a>
+          </form>
+          <label id="playerAddressInfo">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">SET SELL ORDER</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="getAuthorizedPCUY">PCUY:</label> </td>    
+                  <td>
+                    <input class="form-control" id="amountPCUY">
+                  </td>                              
+                </tr>
+                <tr>
+                    <td><label for="getAuthorizedPCUY">USDC:</label> </td>    
+                    <td>
+                      <input class="form-control" id="amountUSDC">
+                    </td>                              
+                  </tr>
+              </table>
+            </div>
+            <a href="#" onclick="OrderBook_SetOrder()" class="btn btn-primary">Set Order</a>
+          </form>
+          <label id="playerAddressInfo">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">LIST ORDERS PENDING</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="getAuthorizedPCUY">LIST:</label> </td>    
+                                         
+                </tr>
+               
+              </table>
+            </div>
+            <a href="#" onclick="OrderBook_ListOrderPending()" class="btn btn-primary">LIST</a>
+          </form>
+          <label id="playerAddressInfo">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">BUY ORDER</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="getAuthorizedPCUY">ID ORDER:</label> </td>    
+                  <td>
+                    <input class="form-control" id="IDORDER1">
+                  </td>                              
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="OrderBook_BuyOrder()" class="btn btn-primary">Buy Order</a>
+          </form>
+          <label id="playerAddressInfo">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+
+      <div class="row">
+        <div>
+          <h3 class="sub-header">REMOVE ORDER</h3>
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="getAuthorizedPCUY">ID ORDER:</label> </td>    
+                  <td>
+                    <input class="form-control" id="IDORDER2">
+                  </td>                              
+                </tr>
+              </table>
+            </div>
+            <a href="#" onclick="OrderBook_RemoveOrder()" class="btn btn-primary">REMOVE ORDER</a>
+          </form>
+          <label id="playerAddressInfo">
+        </div>
+      </div>    
+  
+      <hr/>
+
+
+
+
+
+  </body>
+</html>

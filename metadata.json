@@ -1,0 +1,20 @@
+{
+    "name": "CETI NFT COLECCION",
+    "description": "NFT ACADEMICO PARA EL CURSO ",
+    "image": "https://cyan-big-hippopotamus-597.mypinata.cloud/ipfs/QmWGfBN556uLqcejRD8wgq4C9GN8VhDoJnd6uTZthf43wp/0.png",
+    "attributes": [
+      {
+        "trait_type": "FONDO",
+        "value": "AZUL"
+      },
+      {
+        "trait_type": "FIRMADO",
+        "value": "SI"
+      }
+      ,
+      {
+        "trait_type": "CONSULTORIA",
+        "value": "SI"
+      }
+    ]
+  }
